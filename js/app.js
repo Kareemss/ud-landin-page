@@ -71,7 +71,11 @@ function activateSection() {
 }
 
 // Scroll to anchor ID using scrollTO event
-
+function scrollToSection (event) {
+    event.preventDefault()
+    const section = document.querySelector(event.target.hash);
+    section.scrollIntoView({behavior: 'smooth'});
+}
 
 /**
  * End Main Functions
@@ -83,6 +87,7 @@ function activateSection() {
 document.addEventListener('DOMContentLoaded',navPopulate);
 
 // Scroll to section on link click
+navList.addEventListener('click', scrollToSection)
 
 // Set sections as active
 document.addEventListener('scroll', activateSection);
