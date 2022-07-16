@@ -22,7 +22,10 @@
  * Define Global Variables
  * 
 */
-
+const sections = document.querySelectorAll('section');
+// ["Section 1", "Section 2", 
+    // "Section 3", "Section 4"];
+const navList = document.querySelector('#navbar__list');
 
 /**
  * End Global Variables
@@ -39,10 +42,33 @@
 */
 
 // build the nav
-
+function navPopulate() {
+    for (section of sections){
+        const newListItem = document.createElement('li');
+        newListItem.innerHTML = `<a class="menu__link" href="#${section.id}">${section.dataset.nav}</a>`;
+        navList.appendChild(newListItem);
+    }
+}
 
 // Add class 'active' to section when near top of viewport
-
+function activateSection() {
+    let currentActive = '';
+    for (section of sections) {
+        // const secTop = section.offsetTop
+        const secHeight = section.clientHeight
+        const secRelativeViewport = section.getBoundingClientRect().top
+        if (Math.abs(secRelativeViewport) <= (0.6*secHeight)) {
+            currentActive = section.id;
+        }
+    }
+    for (section of sections) {
+        if (section.id===currentActive) {
+            section.classList.add('active')
+        } else {
+            section.classList.remove('active')
+        }
+    }
+}
 
 // Scroll to anchor ID using scrollTO event
 
@@ -54,8 +80,9 @@
 */
 
 // Build menu 
+document.addEventListener('DOMContentLoaded',navPopulate);
 
 // Scroll to section on link click
 
 // Set sections as active
-
+document.addEventListener('scroll', activateSection);
