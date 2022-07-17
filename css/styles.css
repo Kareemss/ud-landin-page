@@ -10,9 +10,19 @@
 
 
 /* ---- Base Rules ---- */
+/*  */
+.hide {
+    display: none;
+}
+button {
+    position: fixed;
+    top: 90%;
+    left: 50;
+    
+}
 body {
-    background: rgb(136,203,171);
-    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    background: rgb(111, 119, 115);
+    background: linear-gradient(0deg, rgb(211, 212, 212) 0%, rgb(37, 38, 41) 100%);
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
@@ -88,6 +98,12 @@ section {
     transition: ease 0.3s all;
 }
 
+.liActive {
+    background: rgb(173, 173, 173);
+    color: #fff;
+    transition: ease 0.3s all;
+}
+
 /* Header Styles */
 .page__header {
     background: #fff;
@@ -114,6 +130,7 @@ section {
 .landing__container {
     padding: 1em;
     text-align: left;
+    
 }
 
 @media only screen and (min-width: 35em){
@@ -128,6 +145,10 @@ section:nth-of-type(even) .landing__container {
     margin-left: auto;
     text-align: right; 
 }
+
+
+
+
 
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */

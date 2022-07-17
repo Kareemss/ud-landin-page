@@ -27,6 +27,9 @@ const sections = document.querySelectorAll('section');
     // "Section 3", "Section 4"];
 const navList = document.querySelector('#navbar__list');
 
+
+const button = document.querySelector('button');
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -43,8 +46,9 @@ const navList = document.querySelector('#navbar__list');
 
 // build the nav
 function navPopulate() {
-    for (section of sections){
+    for (let section of sections){
         const newListItem = document.createElement('li');
+        // newListItem.setAttribute('id', (section.id + 'n'));
         newListItem.innerHTML = `<a class="menu__link" href="#${section.id}">${section.dataset.nav}</a>`;
         navList.appendChild(newListItem);
     }
@@ -52,8 +56,9 @@ function navPopulate() {
 
 // Add class 'active' to section when near top of viewport
 function activateSection() {
+    const listItems = document.querySelectorAll('li');
     let currentActive = '';
-    for (section of sections) {
+    for (let section of sections) {
         // const secTop = section.offsetTop
         const secHeight = section.clientHeight
         const secRelativeViewport = section.getBoundingClientRect().top
@@ -61,11 +66,18 @@ function activateSection() {
             currentActive = section.id;
         }
     }
-    for (section of sections) {
+    for (let section of sections) {
+        let index = section.id.slice(7)-1
         if (section.id===currentActive) {
             section.classList.add('active')
+            
+            listItems[index].classList.add('liActive')
+            // listItem.classList.add('liActive')
+
         } else {
             section.classList.remove('active')
+            listItems[index].classList.remove('liActive')
+
         }
     }
 }
@@ -76,7 +88,21 @@ function scrollToSection (event) {
     const section = document.querySelector(event.target.hash);
     section.scrollIntoView({behavior: 'smooth'});
 }
+const scrollHeight  = document.documentElement.scrollHeight
+function showButton () {
+    
+    
 
+    // let visible = false;
+    if ((window.scrollY>= (0.1*scrollHeight))) {
+        button.classList.remove('hide');
+
+    } else {
+        button.classList.add('hide');
+
+
+    }
+}
 /**
  * End Main Functions
  * Begin Events
@@ -91,3 +117,15 @@ navList.addEventListener('click', scrollToSection)
 
 // Set sections as active
 document.addEventListener('scroll', activateSection);
+
+// Show "scroll to the top" button
+document.addEventListener('scroll', showButton);
+
+// Button click event
+button.addEventListener('click', () =>{
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+})
