@@ -1,76 +1,156 @@
 <!DOCTYPE >
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Manipulating the DOM</title>
-  <!-- Load Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">  <!-- Load Styles -->
-  <link href="css/styles.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
-<body>
-  <!-- HTML Follows BEM naming conventions 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Manipulating the DOM</title>
+    <!-- Load Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Load Styles -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <!-- HTML Follows BEM naming conventions 
   IDs are only used for sections to connect menu achors to sections -->
-  <header class="page__header">
-    <nav class="navbar__menu">
-      <!-- Navigation starts as empty UL that will be populated with JS -->
-      <ul id="navbar__list"></ul>
-    </nav>
-  </header>
-  <main>
-    <header class="main__hero">
-      <h1>Early Lives of My Favorite Rappers</h1>
+    <header class="page__header">
+      <nav class="navbar__menu">
+        <!-- Navigation starts as empty UL that will be populated with JS -->
+        <ul id="navbar__list"></ul>
+      </nav>
     </header>
-    <!-- Each Section has an ID (used for the anchor) and 
+    <main>
+      <header class="main__hero">
+        <h1>Early Lives of My Favorite Rappers</h1>
+      </header>
+      <!-- Each Section has an ID (used for the anchor) and 
     a data attribute that will populate the li node.
     Adding more sections will automatically populate nav.
     The first section is set to active class by default -->
-    <section id="section1" data-nav="Tyler, the Creator" class="active">
-      <div class="landing__container">
-        <h2>Tyler, the Creator</h2>
-        <p>Tyler Gregory Okonma was born on March 6, 1991, in Hawthorne, California, the son of a Nigerian father with Igbo ancestry and an American mother of mixed African-American and European-Canadian descent. He never met his father and spent his early life living in Hawthorne, moving to Ladera Heights at 17. At the age of seven, he would take the cover out of a CD case and create covers for his own imaginary albums—including a tracklist with song lengths—before he could even make music.</p>
+      <section id="section1" data-nav="Tyler, the Creator" class="active">
+        <div class="landing__container">
+          <h2>Tyler, the Creator</h2>
+          <p>
+            Tyler Gregory Okonma was born on March 6, 1991, in Hawthorne,
+            California, the son of a Nigerian father with Igbo ancestry and an
+            American mother of mixed African-American and European-Canadian
+            descent. He never met his father and spent his early life living in
+            Hawthorne, moving to Ladera Heights at 17. At the age of seven, he
+            would take the cover out of a CD case and create covers for his own
+            imaginary albums—including a tracklist with song lengths—before he
+            could even make music.
+          </p>
 
-        <p>At the age of 14, he taught himself to play the piano. In his 12 years of schooling, he attended 12 different schools in the Los Angeles and Sacramento areas. In the eighth grade, Okonma joined the drama class and was kicked out due to being too hyper, and in the ninth grade, Okonma was not allowed to join the band class because he could not read music. He worked at FedEx for just under two weeks and at Starbucks for over two years. Okonma took his stage name from a Myspace page he used to post his creative endeavors.</p>
-        
-      </div>
-      
-    </section>
-    <section id="section2" data-nav="Kanye West">
-      <div class="landing__container">
-        <h2>Kanye West</h2>
-        <p>Ye was born on June 8, 1977, in Atlanta, Georgia, as Kanye Omari West. After his parents divorced when he was three years old, he moved with his mother to Chicago, Illinois. His father, Ray West, is a former Black Panther and was one of the first black photojournalists at The Atlanta Journal-Constitution. Ray later became a Christian counselor, and in 2006, opened the Good Water Store and Café in Lexington Park, Maryland, with startup capital from his son. West's mother, Dr. Donda C. West (née Williams), was a professor of English at Clark Atlanta University, and the Chair of the English Department at Chicago State University, before retiring to serve as his manager.</p>
+          <p>
+            At the age of 14, he taught himself to play the piano. In his 12
+            years of schooling, he attended 12 different schools in the Los
+            Angeles and Sacramento areas. In the eighth grade, Okonma joined the
+            drama class and was kicked out due to being too hyper, and in the
+            ninth grade, Okonma was not allowed to join the band class because
+            he could not read music. He worked at FedEx for just under two weeks
+            and at Starbucks for over two years. Okonma took his stage name from
+            a Myspace page he used to post his creative endeavors.
+          </p>
+        </div>
+      </section>
+      <section id="section2" data-nav="Kanye West">
+        <div class="landing__container">
+          <h2>Kanye West</h2>
+          <p>
+            Ye was born on June 8, 1977, in Atlanta, Georgia, as Kanye Omari
+            West. After his parents divorced when he was three years old, he
+            moved with his mother to Chicago, Illinois. His father, Ray West, is
+            a former Black Panther and was one of the first black
+            photojournalists at The Atlanta Journal-Constitution. Ray later
+            became a Christian counselor, and in 2006, opened the Good Water
+            Store and Café in Lexington Park, Maryland, with startup capital
+            from his son. West's mother, Dr. Donda C. West (née Williams), was a
+            professor of English at Clark Atlanta University, and the Chair of
+            the English Department at Chicago State University, before retiring
+            to serve as his manager.
+          </p>
 
-        <p>West was raised in a middle-class environment, attending Polaris School for Individual Education in suburban Oak Lawn, Illinois, after living in Chicago. At the age of 10, West moved with his mother to Nanjing, China, where she was teaching at Nanjing University as a Fulbright Scholar. According to his mother, West was the only foreigner in his class, but settled in well and quickly picked up the language, although he has since forgotten most of it. When asked about his grades in high school, West replied, "I got A's and B's."</p>
-      </div>
-      
-    </section>
-    <section id="section3" data-nav="Lil Baby">
-      <div class="landing__container">
-        <h2>Lil Baby</h2>
-        <p>Dominique Jones was born in Atlanta, Georgia in the Oakland City neighborhood. He was two years old when his father left the family, leaving his mother to raise him and his two sisters. Jones dropped out of Booker T. Washington High School in ninth grade and committed to drug dealing.</p>
+          <p>
+            West was raised in a middle-class environment, attending Polaris
+            School for Individual Education in suburban Oak Lawn, Illinois,
+            after living in Chicago. At the age of 10, West moved with his
+            mother to Nanjing, China, where she was teaching at Nanjing
+            University as a Fulbright Scholar. According to his mother, West was
+            the only foreigner in his class, but settled in well and quickly
+            picked up the language, although he has since forgotten most of it.
+            When asked about his grades in high school, West replied, "I got A's
+            and B's."
+          </p>
+        </div>
+      </section>
+      <section id="section3" data-nav="Lil Baby">
+        <div class="landing__container">
+          <h2>Lil Baby</h2>
+          <p>
+            Dominique Jones was born in Atlanta, Georgia in the Oakland City
+            neighborhood. He was two years old when his father left the family,
+            leaving his mother to raise him and his two sisters. Jones dropped
+            out of Booker T. Washington High School in ninth grade and committed
+            to drug dealing.
+          </p>
 
-        <p>In early 2012, Jones was charged for possession with intent to sell among other charges, and in 2013, he was charged with possession of marijuana for less than an ounce. He was arrested for the third time in as many years in 2014, on charges of possession of marijuana with intent to sell, and was incarcerated for two years.</p>
-      </div>
-    </section>
-    <section id="section4" data-nav="Drake">
-      <div class="landing__container">
-        <h2>Drake</h2>
-        <p>Aubrey Drake Graham was born on October 24, 1986 in Toronto, Ontario. His father, Dennis Graham, is African-American and a practicing Catholic from Memphis, Tennessee, who worked as a drummer, performing alongside country musician Jerry Lee Lewis. His mother, Sandra "Sandi" Graham (née Sher), is a Canadian, from an Ashkenazi Jewish family, who worked as an English teacher and florist. Dennis Graham performed at Club Bluenote in Toronto, where he met Sandra Sher, who was in attendance.Drake is a dual citizen of the United States and Canada, having American citizenship due to his American father. In his youth, he attended a Jewish day school, and became a bar mitzvah.</p>
+          <p>
+            In early 2012, Jones was charged for possession with intent to sell
+            among other charges, and in 2013, he was charged with possession of
+            marijuana for less than an ounce. He was arrested for the third time
+            in as many years in 2014, on charges of possession of marijuana with
+            intent to sell, and was incarcerated for two years.
+          </p>
+        </div>
+      </section>
+      <section id="section4" data-nav="Drake">
+        <div class="landing__container">
+          <h2>Drake</h2>
+          <p>
+            Aubrey Drake Graham was born on October 24, 1986 in Toronto,
+            Ontario. His father, Dennis Graham, is African-American and a
+            practicing Catholic from Memphis, Tennessee, who worked as a
+            drummer, performing alongside country musician Jerry Lee Lewis. His
+            mother, Sandra "Sandi" Graham (née Sher), is a Canadian, from an
+            Ashkenazi Jewish family, who worked as an English teacher and
+            florist. Dennis Graham performed at Club Bluenote in Toronto, where
+            he met Sandra Sher, who was in attendance.Drake is a dual citizen of
+            the United States and Canada, having American citizenship due to his
+            American father. In his youth, he attended a Jewish day school, and
+            became a bar mitzvah.
+          </p>
 
-        <p>Drake's parents divorced when he was five years old. After the divorce, he and his mother remained in Toronto; his father returned to Memphis, where he was incarcerated for a number of years on drug-related charges. Graham's limited finances and legal issues caused him to remain in the United States until Drake's early adulthood. Prior to his arrest, however, Graham would travel to Toronto and bring Drake to Memphis every summer. His father later collaborated with Canadian music group Arkells on the music video for a song titled "Drake's Dad". Graham claimed in an interview that Drake's assertions of him being an absent father were embellishments used to sell records, which Drake vehemently denies.</p>
-        
-      </div>
-      
-    </section>
-    <button class="hide"><span class="material-symbols-outlined">
-      keyboard_double_arrow_up
-      </span></button>
-  </main>
-  <footer class="page__footer">
-    <p>&copy Udacity</p>
-  </footer>
-  <script src="js/app.js"></script>
-</body>
+          <p>
+            Drake's parents divorced when he was five years old. After the
+            divorce, he and his mother remained in Toronto; his father returned
+            to Memphis, where he was incarcerated for a number of years on
+            drug-related charges. Graham's limited finances and legal issues
+            caused him to remain in the United States until Drake's early
+            adulthood. Prior to his arrest, however, Graham would travel to
+            Toronto and bring Drake to Memphis every summer. His father later
+            collaborated with Canadian music group Arkells on the music video
+            for a song titled "Drake's Dad". Graham claimed in an interview that
+            Drake's assertions of him being an absent father were embellishments
+            used to sell records, which Drake vehemently denies.
+          </p>
+        </div>
+      </section>
+      <button class="hide">
+        <span class="material-symbols-outlined">
+          keyboard_double_arrow_up
+        </span>
+      </button>
+    </main>
+    <footer class="page__footer">
+      <p>&copy Udacity</p>
+    </footer>
+    <script src="js/app.js"></script>
+  </body>
 </html>
